@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar{
+            display:flex;
+            justify-content: right;
+            align-items: center;
+            padding:5px;
+        }
+        a{
+            text-decoration: none;
+            color:white;
+            font-weight: 600;
+            font-family: 'verdana', sans-serif;
+            margin: 10px;
+        }
+        .page{
+            width: 100%;
+            height: 100vh;
+            background-color: lightblue;
+            background-image: url("image5.jpg");
+            background-size: 100% 100%;
+            animation-name: slide;
+            animation-duration: 15s;
+            animation-timing-function: linear;
+            animation-iteration-count:infinite;
+            animation-direction: alternate-reverse;
+        
+        }
+        .pagestyle{
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.6);
+            animation-name: slide;
+        }
+        @keyframes slide {
+            0%{
+                width: 100%;
+                height: 100vh;
+                background-image: url("image4.jpg");
+                background-size: 100% 100%;
+            }
+            25%{
+                width: 100%;
+                height: 100vh;
+                background-image: url("image6.jpg");
+                background-size: 100% 100%;
+            }
+            50%{
+                width: 100%;
+                height: 100vh;
+                background-image: url("image.jpg");
+                background-size: 100% 100%;
+            }
+            75%{
+                width: 100%;
+                height: 100vh;
+                background-image: url("image2.jpg");
+                background-size: 100% 100%;
+            }
+            100%{
+                width: 100%;
+                height: 100vh;
+                background-image: url("image3.jpg");
+                background-size: 100% 100%;
+            }
+        }
+        h1{
+            color: white;
+            font-size: 3.5rem;
+            margin-top: 0px;
+        }
+        h3{
+            margin-top: 0px;
+        }
+        .text{
+            height:400px;
+            width:1000px;
+            /* background-color: red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 100px;
+            margin-left: 250px;
+            color: white;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="pagestyle">
+            <div class="navbar">
+                <a href="home.html">home</a>
+                <a href="about-us.html">about-us</a>
+                <a href="signup.php">sign-up</a>
+                <a href="login.php">login</a>
+            </div>
+            <hr>
+            <div class="text">
+                <h1>Task Management Application</h1>
+                <h3>Tasks aligned, goals achieved</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .navbar{
+        display:flex;
+        justify-content:right;
+        align-items: center;
+        padding:5px;
+    }
+    a{
+        text-decoration: none;
+        color:white;
+        font-weight: 600;
+        font-family: 'verdana', sans-serif;
+        margin:10px;
+    }
+    .page{
+        width: 100%;
+        height: 100vh;
+        background-color: lightblue;
+        background-image: url("image5.jpg");
+        background-size: 100% 100%;
+        animation-name: slide;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+        animation-iteration-count:infinite;
+        animation-direction: alternate-reverse;
+        
+    }
+    .pagestyle{
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.6);
+        animation-name: slide;
+    }
+    @keyframes slide {
+        0%{
+            width: 100%;
+            height: 100vh;
+            background-image: url("image4.jpg");
+            background-size: 100% 100%;
+        }
+        25%{
+            width: 100%;
+            height: 100vh;
+            background-image: url("image6.jpg");
+            background-size: 100% 100%;
+        }
+        50%{
+            width: 100%;
+            height: 100vh;
+            background-image: url("image.jpg");
+            background-size: 100% 100%;
+        }
+        75%{
+            width: 100%;
+            height: 100vh;
+            background-image: url("image2.jpg");
+            background-size: 100% 100%;
+        }
+        100%{
+            width: 100%;
+            height: 100vh;
+            background-image: url("image3.jpg");
+            background-size: 100% 100%;
+        }
+    }
+    h1{
+        color:bisque;
+        font-size: 1.5rem;
+        margin: 0px;
+        padding: 10px;
+    }
+    h3{
+        margin: 0px;
+        color:bisque;
+        padding:10px;
+    }
+    .text{
+        height:100vh;
+        width: 100%;
+
+    }
+    .list{
+        margin: 0px;
+        color:bisque;
+    }
+    .profile{
+        width: 300px;
+        height: 80px;
+        margin-left:10px;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left:10px;
+        padding-right: 10px;
+    }
+    img{
+        height:50px;
+        width:50px;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <div class="page">
+        <div class="pagestyle">
+            <div class="navbar">
+                <a href="home.html">home</a>
+                <a href="about-us.html">about-us</a>
+                <a href="signup.php">sign-up</a>
+                <a href="login.php">login</a>
+            </div>
+            <hr>
+            <div class="text">
+                <h1>Task Management Application</h1>
+                <h1>About the Creators</h1>
+                <div class="profile">
+                    <div class="box1"><img src="image7.png"></div>
+                    <div class="box1"><img src="image7.png"></div>
+                    <div class="box1"><img src="image7.png"></div>
+                    <div class="box1"><img src="image7.png"></div>
+                </div>
+                <h3>The task management application was developed by a passionate team of Four members of CSE department dedicated to building intuitive and efficient productivity tools. With expertise in JavaScript Node.js, Express.js,and MongoDB, the team aimed to create a seamless and visually appealing Kanban-style platform that simplifies project tracking and task collaboration.
+                    
+                Inspired by modern workflow methodologies like Agile and Scrum, the creators focused onfeatures such as drag-and-drop functionality, user authentication, and real-time task updates,ensuring the application caters to both individual users and teams.
+                    
+                Whether you're a student, a professional, or part of a startup, the creators built thisapplication with the vision of helping users stay organized, manage time better, and achievegoals faster.
+                </h3>
+                <div class="list">
+                    <h2>Contact us</h2>
+                    <ul shape="disk">
+                        <li>Jayavardhan: 9398083468</li>
+                        <li>Gowrav Munindra: 6300476098</li>
+                        <li>Resham sri: 7013528854</li>
+                        <li>Prem kumar: 9381780180</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
