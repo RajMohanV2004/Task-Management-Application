@@ -72,3 +72,17 @@ The team focused on usability, real-time updates, and an intuitive UI to help us
 
 ## 📂 Project Structure
 
+task-management-app/
+│
+├── frontend/ # HTML, CSS, JS, PHP pages
+├── backend/ # Node.js, Express, MongoDB logic
+├── screenshots/ # Output images for README
+├── .env.example # Sample environment config
+├── .gitignore
+└── README.md
+
+
+
+🙌 Acknowledgements
+Thanks to the team members for their collaboration and dedication.
+
