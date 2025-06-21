@@ -35,16 +35,20 @@ The team focused on usability, real-time updates, and an intuitive UI to help us
 ## 📸 Screenshots
 
 ### About Us Page  
-![About Us](screenshots/about-us.png)
+![About Us page](https://github.com/user-attachments/assets/f216179a-e43f-48ff-9d99-13fd17fa6a82)
+
 
 ### Login Page  
-![Login](screenshots/login.png)
+![Login Page](https://github.com/user-attachments/assets/7b60e955-bb24-4bd4-83e1-cde4998ee9fa)
+
 
 ### Sign-Up Page  
-![Signup](screenshots/signup.png)
+![SIgnUp page](https://github.com/user-attachments/assets/2b1cd066-cec3-478f-9151-5caf4a274ac2)
+
 
 ### Dashboard Page  
-![Dashboard](screenshots/dashboard.png)
+![Welcome dashboard page](https://github.com/user-attachments/assets/b71b452b-ffa9-45cd-b771-d7506cb2cb8f)
+
 
 ---
 
