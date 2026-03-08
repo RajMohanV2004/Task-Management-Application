@@ -1,59 +1,62 @@
 <?php
 session_start();
 
-function callApi($url, $payload) {
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, [
-        'Content-Type: application/json'
-    ]);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
-    $resp = curl_exec($ch);
-    if (curl_errno($ch)) {
-        curl_close($ch);
-        return false;
-    }
+function callApi($url, $payload)
+{
+  $ch = curl_init($url);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Content-Type: application/json'
+  ]);
+  curl_setopt($ch, CURLOPT_POST, true);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+  $resp = curl_exec($ch);
+  if (curl_errno($ch)) {
     curl_close($ch);
-    return $resp;
+    return false;
+  }
+  curl_close($ch);
+  return $resp;
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $data = [
-        "email"    => $_POST["email"],
-        "password" => $_POST["password"]
-    ];
+  $data = [
+    "email" => $_POST["email"],
+    "password" => $_POST["password"]
+  ];
 
-    $response = callApi("http://localhost:1000/api/v1/sign-in", $data);
+  $response = callApi("http://localhost:1000/api/v1/sign-in", $data);
 
-    if ($response === false) {
-        $error = "Cannot connect to backend (cURL error).";
+  if ($response === false) {
+    $error = "Cannot connect to backend (cURL error).";
+  } else {
+    $result = json_decode($response, true);
+    if (!empty($result["token"]) && !empty($result["id"])) {
+      // Store session variables including profile photo
+      $_SESSION["token"] = $result["token"];
+      $_SESSION["id"] = $result["id"];
+      $_SESSION["username"] = $result["username"]; // ✅ get from API response, not POST
+      $_SESSION["profilePhoto"] = $result["profilePhoto"] ?? ''; // Store the profile photo
+
+      // Redirect to the home page after successful login
+      header("Location: index.php");
+      exit();
     } else {
-        $result = json_decode($response, true);
-        if (!empty($result["token"]) && !empty($result["id"])) {
-            // Store session variables including profile photo
-            $_SESSION["token"] = $result["token"];
-            $_SESSION["id"] = $result["id"];
-            $_SESSION["username"] = $_POST["username"];
-            $_SESSION["profilePhoto"] = $result["profilePhoto"] ?? ''; // Store the profile photo
-
-            // Redirect to the home page after successful login
-            header("Location: index.php");
-            exit();
-        } else {
-            $error = $result["message"] ?? "Invalid login credentials.";
-        }
+      $error = $result["message"] ?? "Invalid login credentials.";
     }
+  }
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Log In</title>
   <link rel="stylesheet" href="login.css" />
 </head>
+
 <body>
   <div class="login-container">
     <div class="login-card">
@@ -70,4 +73,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
   </div>
 </body>
+
 </html>
