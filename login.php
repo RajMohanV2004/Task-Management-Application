@@ -20,11 +20,11 @@ function callApi($url, $payload) {
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $data = [
-        "username" => $_POST["username"],
+        "email"    => $_POST["email"],
         "password" => $_POST["password"]
     ];
 
-    $response = callApi("http://localhost:1000/api/v1/log-in", $data);
+    $response = callApi("http://localhost:1000/api/v1/sign-in", $data);
 
     if ($response === false) {
         $error = "Cannot connect to backend (cURL error).";
@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <div class="error-message"><?= htmlspecialchars($error) ?></div>
       <?php endif; ?>
       <form method="post" class="login-form">
-        <input name="username" type="text" placeholder="Username" required />
+        <input name="email" type="email" placeholder="Email" required />
         <input name="password" type="password" placeholder="Password" required />
         <button type="submit">Log In</button>
       </form>
